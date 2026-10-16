@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Logbooks — Nature Recognizing Itself</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background-color: #f4f6f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 50px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e0e8e0;
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #2d5a2c;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 18px;
+            color: #5a9e4b;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 15px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 10px auto;
+        }
+
+        .instructions {
+            background-color: #f0f7e8;
+            border-left: 4px solid #5a9e4b;
+            padding: 20px 25px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 40px;
+        }
+
+        .instructions h3 {
+            color: #2d5a2c;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .instructions li {
+            margin-bottom: 6px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border: 1px solid #e0e8e0;
+            border-radius: 12px;
+            padding: 25px;
+            background-color: #fafcfa;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .card .grade {
+            font-size: 13px;
+            font-weight: bold;
+            color: #5a9e4b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: #2d5a2c;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-pdf {
+            background-color: #e8f0e8;
+            color: #2d5a2c;
+            border: 1px solid #c0d8c0;
+        }
+
+        .btn-pdf:hover {
+            background-color: #d8e8d8;
+        }
+
+        .btn-form {
+            background-color: #5a9e4b;
+            color: white;
+            border: 1px solid #5a9e4b;
+        }
+
+        .btn-form:hover {
+            background-color: #4a8e3b;
+        }
+
+        .note {
+            background-color: #fff8e8;
+            border-left: 4px solid #d4a017;
+            padding: 20px 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #665500;
+            margin-bottom: 30px;
+        }
+
+        .note strong {
+            color: #8B6914;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #e0e8e0;
+            padding-top: 25px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Nature Recognizing Itself</h1>
+        <h2>Validación de Logbooks por pares — Grados 6, 7 y 8</h2>
+        <p>Este espacio reúne los tres logbooks diseñados para el proyecto de maestría y los formularios de validación correspondientes. Tu retroalimentación es fundamental para fortalecer el instrumento antes de su implementación en el aula. Gracias por tu colaboración.</p>
+    </header>
+
+    <div class="instructions">
+        <h3>Instrucciones para validadores</h3>
+        <ul>
+            <li>Revisa cada logbook con calma. Puedes abrir el PDF en una pestaña nueva.</li>
+            <li>Después de leerlo, completa el formulario de validación correspondiente.</li>
+            <li>El formulario toma aproximadamente <strong>15–20 minutos</strong>.</li>
+            <li>No hay respuestas correctas ni incorrectas. Tu perspectiva como par es lo más valioso.</li>
+            <li>Puedes validar uno, dos o los tres logbooks. Idealmente, los tres.</li>
+            <li>Si tienes comentarios adicionales, puedes escribirlos al final de cada formulario.</li>
+        </ul>
+    </div>
+
+    <div class="cards">
+
+        <!-- LOGBOOK 6 -->
+        <div class="card">
+            <div class="grade">Grado 6</div>
+            <h3>Plants</h3>
+            <p>Logbook centrado en la observación de plantas, la relación con el entorno y el tránsito desde la exterioridad hacia la pertenencia. Incluye entradas sobre acrósticos, cartas a la naturaleza, cadenas alimenticias y el regalo compartido.</p>
+            <div class="buttons">
+                <a href="https://drive.google.com/file/d/1z0flp3ErWgHCPxZuiTyWDW-FnUfAbgh6/view?usp=drive_link" target="_blank" class="btn btn-pdf">📄 Ver PDF del Logbook 6th</a>
+                <a href="https://forms.gle/CV7Dd5nj82hSE34UA" target="_blank" class="btn btn-form">✅ Validar Logbook 6th</a>
+            </div>
+        </div>
+
+        <!-- LOGBOOK 7 -->
+        <div class="card">
+            <div class="grade">Grado 7</div>
+            <h3>Birds</h3>
+            <p>Logbook centrado en la observación de aves, el canto, el vuelo y las rutinas. Incluye entradas sobre haikus, seguimiento de aves, patrones de vuelo y analogías entre formas naturales y humanas.</p>
+            <div class="buttons">
+                <a href="https://drive.google.com/file/d/1Hk9t12L34zX_ZwTgC9WWMhXxs12dl3Gm/view?usp=drive_link" target="_blank" class="btn btn-pdf">📄 Ver PDF del Logbook 7th</a>
+                <a href="https://forms.gle/sVFQmpmGgPvpB81y5" target="_blank" class="btn btn-form">✅ Validar Logbook 7th</a>
+            </div>
+        </div>
+
+        <!-- LOGBOOK 8 -->
+        <div class="card">
+            <div class="grade">Grado 8</div>
+            <h3>Microcosmos</h3>
+            <p>Logbook centrado en el microcosmos: insectos, arañas, caracoles y artrópodos. Incluye entradas sobre observación con lupa, redes invisibles (micorrizas), cómics desde la perspectiva del ser pequeño y biomimética.</p>
+            <div class="buttons">
+                <a href="https://drive.google.com/file/d/1wAnfll6ylRwCyEfs8OFj1Qn2kUN-1a4e/view?usp=drive_link" target="_blank" class="btn btn-pdf">📄 Ver PDF del Logbook 8th</a>
+                <a href="https://forms.gle/2eHbsDAebn2N7jZy9" target="_blank" class="btn btn-form">✅ Validar Logbook 8th</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="note">
+        <strong>🔒 Confidencialidad:</strong> La información recolectada en los formularios será utilizada exclusivamente para fines de investigación y mejora del instrumento. Los datos serán anonimizados en el análisis y no serán compartidos con terceros.
+    </div>
+
+    <footer>
+        <p>Proyecto de Maestría en Enseñanza de las Ciencias Exactas y Naturales — Naturaleza que se reconoce</p>
+        <p>JORGE ALEJANDRO CARDONA OSPINA · Universidad Nacional de Colombia, sede Manizales - Aspaen Gimnasio Los Cerezos · 2026</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
